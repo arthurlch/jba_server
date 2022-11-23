@@ -20,12 +20,6 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/users', async (ctx) => {
-  const { default: UsersController } = await import('App/Controllers/Http/UsersController')
-  return new UsersController().index(ctx)
-})
-
-Route.get('/jobs', async (ctx) => {
-  const { default: JobsController } = await import('App/Controllers/Http/JobsController')
-  return new JobsController().index(ctx)
+Route.get('/', async () => {
+  return { hello: 'WORLD' }
 })
